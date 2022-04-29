@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {jest} from '@jest/globals'
 import { By } from '@angular/platform-browser';
 import { createTodo } from '../todo-model';
-
 import { TodoComponent } from './todo.component';
 
 describe('TodoListItemComponent', () => {
@@ -22,7 +22,7 @@ describe('TodoListItemComponent', () => {
   });
 
   it('debe ser creado con el titulo asignado', () => {
-    const text = (<HTMLElement>fixture.debugElement.query(By.css('span')).nativeElement).innerText;
+    const text = (<HTMLElement>fixture.debugElement.query(By.css('span')).nativeElement).innerHTML;
     expect(component).toBeTruthy();
     expect(text).toBe('prueba');
   });
@@ -36,7 +36,7 @@ describe('TodoListItemComponent', () => {
     expect(buttonFinalizar.getAttribute('disabled')).not.toBeNull();
   });
   it('Debe notificar que el todo se va a eliminar',()=>{
-    spyOn(component.deleted,'emit');
+    jest.spyOn(component.deleted,'emit');
     const btnEliminar = (<HTMLElement>fixture.debugElement.queryAll(By.css('button'))[0].nativeElement);
     btnEliminar.click()
     expect(component.deleted.emit).toHaveBeenCalled();

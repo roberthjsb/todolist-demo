@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { createTodo } from '../todo-model';
 
@@ -9,7 +10,8 @@ describe('TodoListPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoListPageComponent]
+      declarations: [TodoListPageComponent],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   });

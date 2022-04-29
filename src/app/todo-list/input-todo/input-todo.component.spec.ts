@@ -1,7 +1,8 @@
 import { not } from '@angular/compiler/src/output/output_ast';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
+import {jest} from '@jest/globals'
 import { InputTodoComponent } from './input-todo.component';
 
 describe('InputTodoComponent', () => {
@@ -11,7 +12,8 @@ describe('InputTodoComponent', () => {
   let input: HTMLInputElement;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InputTodoComponent]
+      declarations: [InputTodoComponent],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   });
@@ -34,13 +36,13 @@ describe('InputTodoComponent', () => {
   })
 
   it('Debe llamar al evento added cuando se haga click en el boton add', () => {
-    spyOn(component.added, 'emit');
+    jest.spyOn(component.added, 'emit');
     input.value = 'prueba';
     input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     const disabled = button.getAttribute('disabled')
     expect(disabled).toBeNull();
     button.click();
-    expect(component.added.emit).toHaveBeenCalledOnceWith('prueba');
+    expect(component.added.emit).toHaveBeenCalledWith('prueba');
   })
 });
