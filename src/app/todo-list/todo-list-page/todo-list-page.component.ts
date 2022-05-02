@@ -6,12 +6,9 @@ import { createTodo, TodoModel } from '../todo-model';
   templateUrl: './todo-list-page.component.html',
   styleUrls: ['./todo-list-page.component.scss']
 })
-export class TodoListPageComponent implements OnInit {
+export class TodoListPageComponent {
   todos: TodoModel[] = []
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   addTodo(todoText:string){
     this.todos=[...this.todos,createTodo(todoText)];

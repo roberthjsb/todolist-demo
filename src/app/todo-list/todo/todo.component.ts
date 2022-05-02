@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { createTodo, TodoModel } from '../todo-model';
 
 @Component({
@@ -6,17 +6,15 @@ import { createTodo, TodoModel } from '../todo-model';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent implements OnInit {
-  @Input('item') item:TodoModel=createTodo('');
-  @Output('deleted') deleted= new EventEmitter<void>();
+export class TodoComponent {
+  @Input() item: TodoModel = createTodo('');
+  @Output() deleted = new EventEmitter<void>();
   constructor() { }
 
-  ngOnInit(): void {
-  }
-  remove(){ 
+  remove() {
     this.deleted.emit();
   }
-  finalizar(){
-    this.item.finalizada=true;
+  finalizar() {
+    this.item.finalizada = true;
   }
 }

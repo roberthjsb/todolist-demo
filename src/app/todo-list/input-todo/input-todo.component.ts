@@ -5,13 +5,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './input-todo.component.html',
   styleUrls: ['./input-todo.component.scss']
 })
-export class InputTodoComponent implements OnInit {
-  @Output('added') added= new EventEmitter<string>();
+export class InputTodoComponent  {
+  @Output() added= new EventEmitter<string>();
   textValue:string='';
   constructor() { }
 
-  ngOnInit(): void {
-  }
   clickAdd(){
     console.log('clickAdd....')
     this.added.emit(this.textValue);
