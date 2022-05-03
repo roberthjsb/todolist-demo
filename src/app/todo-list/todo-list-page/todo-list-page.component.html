@@ -1,3 +1,4 @@
+<h1>Demo integración continua</h1>
 <app-input-todo (added)="addTodo($event)"></app-input-todo>
 <ng-container *ngFor="let todo of todos; let i=index">
     <app-todo [item]=todo (deleted)="remove(i)"></app-todo>

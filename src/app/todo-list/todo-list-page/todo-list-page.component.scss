@@ -1,6 +1,11 @@
 :host{
     border: 1px solid #b2b2b2;
+    border-radius: 4px ;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
+    box-shadow: 3px 2px 3px 2px #a19f9f3a;
+    h1{ 
+        text-align: center;
+    }
 }

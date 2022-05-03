@@ -11,7 +11,6 @@ export class InputTodoComponent  {
   constructor() { }
 
   clickAdd(){
-    console.log('clickAdd....')
     this.added.emit(this.textValue);
   }
   isEmpty(){
