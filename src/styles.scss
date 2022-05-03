@@ -1,3 +1,19 @@
 h1 {
     margin-block: 0.2rem;
 }
+
+
+button{
+    border: 1px solid #e1e1e7bd;
+    &:hover {
+        cursor: pointer;
+    }
+    &.primary {
+        background-color: #349dff;
+        color: #f3f1f1;
+    }
+    &:disabled{
+        cursor: not-allowed;
+    }
+
+}
