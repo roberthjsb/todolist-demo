@@ -3,17 +3,22 @@ h1 {
 }
 
 
+
 button{
-    border: 1px solid #e1e1e7bd;
+    border: 1px solid #e1e7e4bd;
     &:hover {
         cursor: pointer;
     }
     &.primary {
-        background-color: #349dff;
-        color: #f3f1f1;
+        background-color: #7889d6;
+        color: #fff;
+        border: 1px solid #243fdabd;
     }
     &:disabled{
         cursor: not-allowed;
+        border: 1px solid #e1e7e4bd;
+        color: #f3f1f1;
+
     }
 
 }
